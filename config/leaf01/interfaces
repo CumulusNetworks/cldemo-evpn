@@ -1,6 +1,8 @@
 auto lo
 iface lo inet loopback
+    alias loopback
     address 10.0.0.11/32
+    clagd-vxlan-anycast-ip 10.10.10.20
 
 auto eth0
 iface eth0 inet dhcp
@@ -12,13 +14,31 @@ iface swp51
 auto swp52
 iface swp52
 
-# bridge to hosts
+#host connections
 auto swp1
 iface swp1
 
-auto br0
-iface br0
-    bridge-ports swp1 vxlan10001 vxlan10100 vxlan10200
+auto server01
+iface server01
+  alias server01 MLAG bond
+  bond-slaves swp1
+  clag-id 1
+
+auto peerlink
+iface peerlink
+  alias MLAG peerlink bond
+  bond-slaves swp49 swp50
+
+auto peerlink.4094
+iface peerlink.4094
+  address 169.254.1.1/30
+  clagd-peer-ip 169.254.1.2
+  clagd-backup-ip 192.168.200.12
+  clagd-sys-mac 44:38:39:FF:40:94
+
+auto bridge
+iface bridge
+    bridge-ports server01 peerlink vxlan10001 vxlan10100 vxlan10200
     bridge-vlan-aware yes
     bridge-vids 1 100 200
     bridge-pvid 1
