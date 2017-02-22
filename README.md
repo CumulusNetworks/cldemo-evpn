@@ -64,7 +64,7 @@ Detailed Instructions and Documentation
 [EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
 The EVPN Documentation was built around this demo and makes walking through this demo a breeze.  Please report problems with this demo using the "issues" tab above.
 
-![Cumulus icon](http://cumulusnetworks.com/static/cumulus/img/logo_2014.png)
+![Cumulus icon](cumulus-logo.png)
 
 ### Cumulus Linux
 ---------------------------------------
