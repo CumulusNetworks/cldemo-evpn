@@ -12,8 +12,8 @@ iface swp51
 auto swp52
 iface swp52
 
-auto br0
-iface br0
+auto bridge
+iface bridge
     bridge-ports swp2 vxlan10001 vxlan10100 vxlan10200
     bridge-vlan-aware yes
     bridge-vids 1 100 200
@@ -24,16 +24,18 @@ iface vxlan10001
     vxlan-id 10001
     vxlan-local-tunnelip 10.0.0.12
     bridge-access 1
+    bridge-learning off
 
 auto vxlan10100
 iface vxlan10100
      vxlan-id 10100
      vxlan-local-tunnelip 10.0.0.12
      bridge-access 100
+     bridge-learning off
 
 auto vxlan10200
 iface vxlan10200
      vxlan-id 10200
      vxlan-local-tunnelip 10.0.0.12
      bridge-access 200
-
+     bridge-learning off
