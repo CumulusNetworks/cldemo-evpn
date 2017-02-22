@@ -48,15 +48,18 @@ iface vxlan10001
     vxlan-id 10001
     vxlan-local-tunnelip 10.0.0.11
     bridge-access 1
+    bridge-learning off
 
 auto vxlan10100
 iface vxlan10100
      vxlan-id 10100
      vxlan-local-tunnelip 10.0.0.11
      bridge-access 100
+     bridge-learning off
 
 auto vxlan10200
 iface vxlan10200
      vxlan-id 10200
      vxlan-local-tunnelip 10.0.0.11
      bridge-access 200
+     bridge-learning off
