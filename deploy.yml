@@ -1,0 +1,14 @@
+---
+- hosts: leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server02 server03 server04
+  become: yes
+  tasks:
+    - name: copy interfaces
+      copy: src=config/{{ansible_hostname}}/interfaces dest=/etc/network/
+    - name: copy Quagga daemons
+      copy: src=config/{{ansible_hostname}}/daemons dest=/etc/quagga/
+    - name: copy Quagga conf
+      copy: src=config/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
+    - name: reload networking
+      command: ifreload -a
+    - name: reload quagga
+      service: name=quagga state=restarted
