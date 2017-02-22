@@ -50,6 +50,21 @@ sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early
 apt-get update
 echo "  installing Quagga"
 apt-get install cumulus-evpn
+echo " use apt-get upgrade to load quagga package"
+sudo apt-get upgrade -y --force-yes
+
+echo "  copying interfaces"
+cp /home/vagrant/interfaces /etc/network/interfaces
+echo "  copying daemons"
+cp /home/vagrant/daemons /etc/quagga/daemons
+echo "  copying Quagga.conf"
+cp /home/vagrant/Quagga.conf /etc/quagga/Quagga.conf
+
+## Enabling Quagga
+echo "  enabling zebra"
+sed -i 's/zebra=no/zebra=yes/g' /etc/quagga/daemons
+echo "  copying bgp"
+sed -i 's/bgpd=no/bgpd=yes/g' /etc/quagga/daemons
 
 echo "  enabling Quagga"
 systemctl enable quagga.service
