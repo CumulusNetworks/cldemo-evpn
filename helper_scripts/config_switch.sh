@@ -51,7 +51,7 @@ apt-get update
 echo "  installing Quagga"
 apt-get install cumulus-evpn
 echo " use apt-get upgrade to load quagga package"
-apt-get upgrade
+apt-get upgrade -y
 
 echo "  enabling Quagga"
 systemctl enable quagga.service
