@@ -7,23 +7,36 @@ The flatfiles in this repository will set up a BGP unnumbered routing fabric bet
 
 
 
-Quickstart: Run the demo
+Quickstart: Run the single-attach demo
 ------------------------
     git clone https://github.com/cumulusnetworks/cldemo-evpn
     cd cldemo-evpn
-    vagrant up oob-mgmt-server oob-mgmt-switch 
+    vagrant up oob-mgmt-server oob-mgmt-switch
     vagrant up leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server02 server03 server04
     vagrant ssh oob-mgmt-server
     sudo su - cumulus
     ssh server01
     ping 172.16.1.104
-    
-    
+
 ![Topology](evpn.png)
-    
+
+Quickstart: Run the dual-attach (MLAG) demo
+------------------------
+    git clone https://github.com/cumulusnetworks/cldemo-evpn
+    cd cldemo-evpn
+    git checkout mlag
+    vagrant up oob-mgmt-server oob-mgmt-switch
+    vagrant up leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server02 server03 server04
+    vagrant ssh oob-mgmt-server
+    sudo su - cumulus
+    ssh server01
+    ping 172.16.1.103
+
+![Topology](mlag.png)
+
 Requirements
 ----------------------
-[Vagrant](https://www.vagrantup.com/) 
+[Vagrant](https://www.vagrantup.com/)
 
 and
 
@@ -46,7 +59,7 @@ By default this Vagrantfile is setup for Virtualbox.  To use this Demo for KVM u
 
 All other directions remain the same
 
-Detailed Instructions and Documentation 
+Detailed Instructions and Documentation
 ---------------------------------------
 [EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
 The EVPN Documentation was built around this demo and makes walking through this demo a breeze.  Please report problems with this demo using the "issues" tab above.
