@@ -6,11 +6,11 @@
       copy: src=config/{{ansible_hostname}}/interfaces dest=/etc/network/
     - name: copy Quagga daemons
       copy: src=config/{{ansible_hostname}}/daemons dest=/etc/quagga/
-      when: ''"server" not in ansible_hostname'
+      when: '"server" not in ansible_hostname'
     - name: copy Quagga conf
       copy: src=config/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
     - name: reload networking
       command: ifreload -a
     - name: reload quagga
       service: name=quagga state=restarted
-      when: ''"server" not in ansible_hostname'
+      when: '"server" not in ansible_hostname'
