@@ -26,7 +26,7 @@ Quickstart: Run the dual-attach (MLAG) demo
     cd cldemo-evpn
     git checkout mlag
     vagrant up oob-mgmt-server oob-mgmt-switch
-    vagrant up leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server02 server03 server04
+    vagrant up leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server03
     vagrant ssh oob-mgmt-server
     sudo su - cumulus
     ssh server01
