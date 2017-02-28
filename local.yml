@@ -7,11 +7,11 @@
       delegate_to: localhost
 
     - name: Restart isc-dhcp-server
-      service: name=isc-dhcp-server state=restarted pattern=/var/run/dhcp-server/dhcpd.pid
+      service: name=isc-dhcp-server state=restarted
       delegate_to: localhost
 
     - name: Verify isc-dhcp-server is running
-      service: name=isc-dhcp-server state=started pattern=/var/run/dhcp-server/dhcpd.pi
+      service: name=isc-dhcp-server state=started
       delegate_to: localhost
 
     - name: install required packages
@@ -21,9 +21,9 @@
       delegate_to: localhost
 
     - name: restart the apt-cacher-ng
-      service: name=apt-cacher-ng state=restarted pattern=/var/run/apt-cacher-ng/pid
+      service: name=apt-cacher-ng state=restarted
       delegate_to: localhost
 
     - name: Verify apt-cacher is running
-      service: name=apt-cacher-ng state=started pattern=/var/run/apt-cacher-ng/pid
+      service: name=apt-cacher-ng state=started
       delegate_to: localhost
