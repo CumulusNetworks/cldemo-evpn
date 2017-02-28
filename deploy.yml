@@ -2,6 +2,9 @@
 - hosts: leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server03
   become: yes
   tasks:
+    - name: Set proxy to oob-mgmt-server
+      lineinfile: dest=/etc/apt/apt.conf.d/69apt-proxy line='Acquire::http::Proxy "http://192.168.0.254:3142";' create=yes
+
     - name: copy interfaces
       copy: src=config/{{ansible_hostname}}/interfaces dest=/etc/network/
       when: '"Ubuntu" in ansible_lsb.id'

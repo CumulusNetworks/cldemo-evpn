@@ -1,7 +1,3 @@
-[oob-switch]
-oob-mgmt-switch ansible_user=cumulus
-
-
 [leaf]
 leaf01 ansible_host=192.168.0.11 ansible_user=cumulus
 leaf02 ansible_host=192.168.0.12 ansible_user=cumulus
