@@ -1,5 +1,5 @@
 ---
-- hosts: leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server03
+- hosts: localhost
   become: yes
   tasks:
     - name: Do not allow dhcp to send out a default route for anyone
