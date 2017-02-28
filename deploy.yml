@@ -36,7 +36,7 @@
       when: '"Ubuntu" in ansible_lsb.id'
 
     - name: copy interfaces
-      copy: src=mlag/{{ansible_hostname}}/interfacesubuntu dest=/etc/network/interfaces
+      copy: src=config/{{ansible_hostname}}/interfacesubuntu dest=/etc/network/interfaces
       when: '"Ubuntu" in ansible_lsb.id'
 
     - name: restarts servers with their new configuration
