@@ -10,8 +10,12 @@
     - name: copy Quagga conf
       copy: src=config/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
       when: '"server" not in ansible_hostname'
-    - name: reload networking
+    - name: reload networking switches
       command: ifreload -a
+      when: '"server" not in ansible_hostname'
+    - name: reload network servers
+      command: ifup bond0
+      when: '"server" in ansible_hostname'
     - name: reload quagga
       service: name=quagga state=restarted
       when: '"server" not in ansible_hostname'
