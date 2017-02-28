@@ -13,5 +13,5 @@ spine02 ansible_host=192.168.0.22 ansible_user=cumulus
 [hosts]
 server01 ansible_host=192.168.0.31 ansible_user=cumulus
 server02 ansible_host=192.168.0.32 ansible_user=cumulus
-server03 ansible_host=192.168.0.32 ansible_user=cumulus
+server03 ansible_host=192.168.0.33 ansible_user=cumulus
 server04 ansible_host=192.168.0.34 ansible_user=cumulus
