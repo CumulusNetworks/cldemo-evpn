@@ -4,14 +4,44 @@
   tasks:
     - name: copy interfaces
       copy: src=config/{{ansible_hostname}}/interfaces dest=/etc/network/
+      when: '"Ubuntu" in ansible_lsb.id'
+
     - name: copy Quagga daemons
       copy: src=config/{{ansible_hostname}}/daemons dest=/etc/quagga/
       when: '"server" not in ansible_hostname'
+
     - name: copy Quagga conf
       copy: src=config/{{ansible_hostname}}/Quagga.conf dest=/etc/quagga/
       when: '"server" not in ansible_hostname'
+
     - name: reload networking
       command: ifreload -a
+      when: '"Cumulus" in ansible_lsb.id'
+
     - name: reload quagga
       service: name=quagga state=restarted
       when: '"server" not in ansible_hostname'
+
+    - name: install ifenslave package
+      apt: name={{ item }} update_cache=yes
+      with_items:
+        - ifenslave-2.6
+      when: '"Ubuntu" in ansible_lsb.id'
+
+    - name: Setup bonding module in Kernel
+      command: modprobe bonding
+      when: '"Ubuntu" in ansible_lsb.id'
+
+    - name: copy interfaces
+      copy: src=mlag/{{ansible_hostname}}/interfacesubuntu dest=/etc/network/interfaces
+      when: '"Ubuntu" in ansible_lsb.id'
+
+    - name: restarts servers with their new configuration
+      shell: sleep 1 && shutdown -r 0
+      async: 1
+      poll: 0
+      ignore_errors: true
+      when: '"Ubuntu" in ansible_lsb.id'
+
+    - name: Wait for everything to come back up
+      local_action: wait_for port=22 host="{{ inventory_hostname }}" search_regex=OpenSSH delay=10
