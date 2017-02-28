@@ -4,10 +4,22 @@
 auto eth0
 iface eth0 inet dhcp
 
+auto eth1
+iface eth1 inet manual
+    bond-master bond0
+auto eth2
+iface eth2 inet manual
+    bond-master bond0
+
 auto bond0
 iface bond0
-    bond-slaves eth1 eth2
+    #bond-slaves eth1 eth2
     address 172.16.1.101/24
+    bond-mode 802.3ad
+    bond-miimon 100
+    bond-lacp-rate 1
+    bond-min-links 1
+    bond-xmit-hash-policy layer3+4
 
 auto bond0.100
 iface bond0.100
