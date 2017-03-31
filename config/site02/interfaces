@@ -13,6 +13,7 @@ iface swp44
 # uplinks
 auto swp51
 iface swp51
+  address 172.16.1.14/30
 
 auto bridge
 iface bridge
@@ -31,13 +32,13 @@ iface vxlan1
 auto vxlan100
 iface vxlan100
      vxlan-id 100
-    vxlan-local-tunnelip 20.20.20.20
+     vxlan-local-tunnelip 20.20.20.20
      bridge-access 100
      bridge-learning off
 
 auto vxlan200
 iface vxlan200
      vxlan-id 200
-    vxlan-local-tunnelip 20.20.20.20
+     vxlan-local-tunnelip 20.20.20.20
      bridge-access 200
      bridge-learning off
