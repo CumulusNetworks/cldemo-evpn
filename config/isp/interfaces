@@ -1,6 +1,6 @@
 auto lo
 iface lo inet loopback
-    address 10.0.0.253/32
+    address 10.0.0.252/32
 
 auto eth0
 iface eth0 inet dhcp
