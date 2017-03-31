@@ -1,0 +1,17 @@
+#configuration is for Cumulus VX
+#in real life this is a server OS
+
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1
+    address 172.16.1.105/24
+
+auto eth1.100
+iface eth1.100
+    address 172.16.100.105/24
+
+auto eth1.200
+iface eth1.200
+    address 172.16.200.105/24

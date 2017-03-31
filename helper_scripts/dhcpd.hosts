@@ -42,6 +42,13 @@ group {
     option host-name "server04";
   }
 
+ host server05 {
+    # HW address for eth0
+    hardware ethernet A0:00:00:00:00:54  ;
+    fixed-address 192.168.200.105;
+    option host-name "server05";
+  }
+
  host spine02 {
     # HW address for eth0
     hardware ethernet A0:00:00:00:00:22;

@@ -17,7 +17,7 @@ iface swp51
 
 auto bridge
 iface bridge
-    bridge-ports vxlan1 vxlan100 vxlan200
+    bridge-ports swp1 vxlan1 vxlan100 vxlan200
     bridge-vlan-aware yes
     bridge-vids 1 100 200
     bridge-pvid 1
