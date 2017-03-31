@@ -1,0 +1,45 @@
+auto lo
+iface lo inet loopback
+    address 10.0.0.41/32
+
+auto eth0
+iface eth0 inet dhcp
+
+auto swp44
+iface swp44
+  address 172.16.1.2/30
+
+# uplinks
+auto swp51
+iface swp51
+
+auto swp52
+iface swp52
+
+auto bridge
+iface bridge
+    bridge-ports vxlan1 vxlan100 vxlan200
+    bridge-vlan-aware yes
+    bridge-vids 1 100 200
+    bridge-pvid 1
+
+auto vxlan1
+iface vxlan1
+    vxlan-id 1
+    vxlan-local-tunnelip 10.0.0.14
+    bridge-access 1
+    bridge-learning off
+
+auto vxlan100
+iface vxlan100
+     vxlan-id 100
+     vxlan-local-tunnelip 10.0.0.14
+     bridge-access 100
+     bridge-learning off
+
+auto vxlan200
+iface vxlan200
+     vxlan-id 200
+     vxlan-local-tunnelip 10.0.0.14
+     bridge-access 200
+     bridge-learning off
