@@ -100,11 +100,11 @@ group {
     fixed-address 192.168.200.252;
     option host-name "isp";
   }
- host site2 {
+ host site02 {
     # HW address for eth0
     hardware ethernet A0:00:00:00:00:51;
     fixed-address 192.168.200.250;
-    option host-name "site2";
+    option host-name "site02";
   }
 
 }#End of static host group

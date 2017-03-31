@@ -295,7 +295,7 @@ end
             :libvirt__tunnel_port => '8043',
             :libvirt__iface_name => 'swp13',
             auto_config: false
-      # link for swp14 --> site2:eth0
+      # link for swp14 --> site02:eth0
       device.vm.network "private_network",
             :mac => "44383900005c",
             :libvirt__tunnel_type => 'udp',
@@ -827,7 +827,7 @@ end
             :libvirt__tunnel_port => '9047',
             :libvirt__iface_name => 'eth0',
             auto_config: false
-      # link for swp1 --> site2:swp51
+      # link for swp1 --> site02:swp51
       device.vm.network "private_network",
             :mac => "443839000020",
             :libvirt__tunnel_type => 'udp',
@@ -2020,9 +2020,9 @@ vagrant_interface_rule
 
 end
 
-  ##### DEFINE VM for site2 #####
-  config.vm.define "site2" do |device|
-    device.vm.hostname = "site2"
+  ##### DEFINE VM for site02 #####
+  config.vm.define "site02" do |device|
+    device.vm.hostname = "site02"
     device.vm.box = "CumulusCommunity/cumulus-vx"
     device.vm.box_version = "3.2.1"
 
