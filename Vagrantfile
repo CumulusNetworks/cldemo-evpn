@@ -167,7 +167,7 @@ end
     device.vm.box_version = "3.2.1"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 256
+      v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
@@ -2296,7 +2296,7 @@ end
     device.vm.box_version = "3.2.1"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 256
+      v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
@@ -2369,7 +2369,7 @@ delete_udev_directory
 
 device.vm.provision :shell , :inline => <<-udev_rule
 echo "  INFO: Adding UDEV Rule: a0:00:00:00:00:53 --> eth0"
-echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="44:38:39:00:00:3a", NAME="eth0", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
+echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="a0:00:00:00:00:53", NAME="eth0", SUBSYSTEMS=="pci"' >> /etc/udev/rules.d/70-persistent-net.rules
 udev_rule
      device.vm.provision :shell , :inline => <<-udev_rule
 echo "  INFO: Adding UDEV Rule: 44:38:39:00:00:07 --> swp1"
