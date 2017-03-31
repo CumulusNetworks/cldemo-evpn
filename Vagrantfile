@@ -2102,11 +2102,10 @@ end
 
   ##### DEFINE VM for server01 #####
   config.vm.define "server01" do |device|
-    device.vm.hostname = "server01"
-    device.vm.box = "yk0/ubuntu-xenial"
-
-    device.vm.provider :libvirt do |v|
-      v.nic_model_type = 'e1000'
+    device.vm.box = "CumulusCommunity/cumulus-vx"
+    device.vm.box_version = "3.2.0"
+    device.vm.provider "virtualbox" do |v|
+      v.name = "1478207602_server01"
       v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
@@ -2197,11 +2196,10 @@ end
 
   ##### DEFINE VM for server03 #####
   config.vm.define "server03" do |device|
-    device.vm.hostname = "server03"
-    device.vm.box = "yk0/ubuntu-xenial"
-
-    device.vm.provider :libvirt do |v|
-      v.nic_model_type = 'e1000'
+    device.vm.box = "CumulusCommunity/cumulus-vx"
+    device.vm.box_version = "3.2.0"
+    device.vm.provider "virtualbox" do |v|
+      v.name = "1478207602_server03"
       v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
