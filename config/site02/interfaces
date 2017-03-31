@@ -1,6 +1,6 @@
 auto lo
 iface lo inet loopback
-    address 10.0.0.41/32
+    address 10.0.0.250/32
     address 20.20.20.20/32
 
 auto eth0
