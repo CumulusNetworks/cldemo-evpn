@@ -76,5 +76,35 @@ group {
     fixed-address 192.168.200.14;
     option host-name "leaf04";
   }
+ host exit01 {
+    # HW address for eth0
+    hardware ethernet A0:00:00:00:00:41;
+    fixed-address 192.168.200.41;
+    option host-name "exit01";
+  }
+ host exit02 {
+    # HW address for eth0
+    hardware ethernet A0:00:00:00:00:42;
+    fixed-address 192.168.200.42;
+    option host-name "exit02";
+  }
+ host internet {
+    # HW address for eth0
+    hardware ethernet A0:00:00:00:00:53;
+    fixed-address 192.168.200.253;
+    option host-name "internet";
+  }
+ host isp {
+    # HW address for eth0
+    hardware ethernet A0:00:00:00:00:52;
+    fixed-address 192.168.200.252;
+    option host-name "isp";
+  }
+ host site2 {
+    # HW address for eth0
+    hardware ethernet A0:00:00:00:00:51;
+    fixed-address 192.168.200.250;
+    option host-name "site2";
+  }
 
 }#End of static host group

@@ -76,5 +76,5 @@ graph vx {
  "exit02":"eth0" -- "oob-mgmt-switch":"swp13" [left_mac="A0:00:00:00:00:42"]
  "site2":"eth0" -- "oob-mgmt-switch":"swp14" [left_mac="A0:00:00:00:00:51"]
  "isp":"eth0" -- "oob-mgmt-switch":"swp16" [left_mac="A0:00:00:00:00:52"]
- "internet":"eth0" -- "oob-mgmt-switch":"swp15"
+ "internet":"eth0" -- "oob-mgmt-switch":"swp15" [left_mac="A0:00:00:00:00:53"]
 }
