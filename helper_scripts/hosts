@@ -19,7 +19,7 @@
 192.168.200.42 exit02
 192.168.200.253 internet
 192.168.200.252 isp
-192.168.200.250 site2
+192.168.200.250 site02
 
 
 # The following lines are desirable for IPv6 capable hosts

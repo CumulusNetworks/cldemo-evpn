@@ -19,3 +19,9 @@ iface swp3
 
 auto swp4
 iface swp4
+
+auto swp29
+iface swp29
+
+auto swp30
+iface swp30
