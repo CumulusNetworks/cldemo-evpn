@@ -1792,7 +1792,7 @@ end
 
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
-    device.vm.provision :shell , path: "./helper_scripts/config_internet.sh"
+    device.vm.provision :shell , path: "./helper_scripts/config_switch.sh"
 
     # Copy over configuration files
     device.vm.provision "file", source: "./config/internet/interfaces", destination: "~/interfaces"
