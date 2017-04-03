@@ -2453,8 +2453,8 @@ end
 
     # Copy over configuration files
     device.vm.provision "file", source: "./config/internet/interfaces", destination: "~/interfaces"
-    device.vm.provision "file", source: "./config/quagga/daemons", destination: "~/daemons"
-    device.vm.provision "file", source: "./config/quagga/Quagga.conf", destination: "~/Quagga.conf"
+    device.vm.provision "file", source: "./config/internet/daemons", destination: "~/daemons"
+    device.vm.provision "file", source: "./config/internet/Quagga.conf", destination: "~/Quagga.conf"
 
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
