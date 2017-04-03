@@ -1794,6 +1794,10 @@ end
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
     device.vm.provision :shell , path: "./helper_scripts/config_internet.sh"
 
+    # Copy over configuration files
+    device.vm.provision "file", source: "./config/internet/interfaces", destination: "~/interfaces"
+    device.vm.provision "file", source: "./config/internet/daemons", destination: "~/daemons"
+    device.vm.provision "file", source: "./config/internet/Quagga.conf", destination: "~/Quagga.conf"
 
     # Install Rules for the interface re-map
     device.vm.provision :shell , :inline => <<-delete_udev_directory
