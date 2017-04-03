@@ -124,6 +124,11 @@ Vagrant.configure("2") do |config|
     # Shorten Boot Process - Applies to Ubuntu Only - remove \"Wait for Network\"
     device.vm.provision :shell , inline: "sed -i 's/sleep [0-9]*/sleep 1/' /etc/init/failsafe.conf 2>/dev/null || true"
 
+    #Copy over DHCP files and MGMT Network Files
+    device.vm.provision "file", source: "./helper_scripts/dhcpd.conf", destination: "~/dhcpd.conf"
+    device.vm.provision "file", source: "./helper_scripts/dhcpd.hosts", destination: "~/dhcpd.hosts"
+    device.vm.provision "file", source: "./helper_scripts/hosts", destination: "~/hosts"
+    device.vm.provision "file", source: "./helper_scripts/ansible_hostfile", destination: "~/ansible_hostfile"
 
     # Run the Config specified in the Node Attributes
     device.vm.provision :shell , privileged: false, :inline => 'echo "$(whoami)" > /tmp/normal_user'
