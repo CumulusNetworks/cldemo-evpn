@@ -1,13 +1,17 @@
+![Cumulus icon](cumulus-logo.png)
+Cumulus Networks EVPN Demos for [Cumulus VX](https://cumulusnetworks.com/products/cumulus-vx/)
+
+Need help?  Post on the [Community](https://getsatisfaction.cumulusnetworks.com/cumulus) or join [Cumulus Slack](https://slack.cumulusnetworks.com/)
+
+
 Demo EVPN on Cumulus Linux
 ========================
-This Github repository contains the configuration files necessary for setting up EVPN (Ethernet VPN) using Cumulus Linux and Quagga on the [Reference Topology](http://github.com/cumulusnetworks/cldemo-vagrant).  Only Server01->Server04, Leaf01->Leaf04 and Spine01->Spine02 are used.
+This Github repository contains the configuration files necessary for setting up EVPN (Ethernet VPN) using Cumulus Linux and Quagga on the [Reference Topology](http://github.com/cumulusnetworks/cldemo-vagrant).
 
-The flatfiles in this repository will set up a BGP unnumbered routing fabric between the leafs and spines, and will trunks between switches and the servers in that rack.
-
-
+The [configuration files](config/) in this repository will set up a BGP unnumbered routing fabric between the leafs and spines, and will trunks between switches and the servers in that rack.
 
 
-Quickstart: Run the Single-Attach Demo
+Quickstart: Single-Attach Demo
 ------------------------
     git clone https://github.com/cumulusnetworks/cldemo-evpn
     cd cldemo-evpn
@@ -20,7 +24,7 @@ Quickstart: Run the Single-Attach Demo
 
 ![Topology](evpn.png)
 
-Quickstart: Run the Dual-Attach (MLAG) Demo
+Quickstart: Dual-Attach (MLAG) Demo
 ------------------------
     git clone https://github.com/cumulusnetworks/cldemo-evpn
     cd cldemo-evpn
@@ -34,7 +38,7 @@ Quickstart: Run the Dual-Attach (MLAG) Demo
 
 ![Topology](mlag.png)
 
-Quickstart: Run the DCI (Datacenter Interconnect) iBGP Demo
+Quickstart: DCI (Datacenter Interconnect) iBGP Demo
 ------------------------
 NOTE: Due to the size the DCI demo is only supported on KVM
 
@@ -62,6 +66,10 @@ DCI iBGP Demo Notes:
     * FABRIC, the connection internally to the spine switches
     * DCI, the connection across the internet to site02.  This comes up after reachability to site02 comes up.
 
+Detailed Instructions and Documentation
+---------------------------------------
+[EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
+The EVPN Documentation was built around this demo and makes walking through this demo a breeze.  Please report problems with this demo using the "issues" tab above.
 
 
 Requirements
@@ -89,37 +97,9 @@ By default this Vagrantfile is setup for Virtualbox.  To use this Demo for KVM u
 
 All other directions remain the same
 
-Detailed Instructions and Documentation
----------------------------------------
-[EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
-The EVPN Documentation was built around this demo and makes walking through this demo a breeze.  Please report problems with this demo using the "issues" tab above.
-
-![Rocket Turtle](rocketturtle.png)
-
-### Cumulus Community
-
-Need help?  Post on the [Community](https://getsatisfaction.cumulusnetworks.com/cumulus) or join [Cumulus Slack](https://slack.cumulusnetworks.com/)
-
-![Cumulus icon](cumulus-logo.png)
 
 ### Cumulus Linux
 ---------------------------------------
 Cumulus Linux is a software distribution that runs on top of industry standard networking hardware. It enables the latest Linux applications and automation tools on networking gear while delivering new levels of innovation and ﬂexibility to the data center.
 
 For further details please see: [cumulusnetworks.com](http://www.cumulusnetworks.com)
-
-### Virtualizing a Network with Cumulus VX
----------------------------------------
-[Cumulus VX](https://cumulusnetworks.com/cumulus-vx/) is a virtual machine
-produced by Cumulus Networks to simulate the user experience of configuring a
-switch using the Cumulus Linux network operating system.
-[Vagrant](https://www.vagrantup.com/) is an open source tool for quickly
-deploying large topologies of virtual machines. Vagrant and Cumulus VX can be
-used together to build virtual simulations of production networks to validate
-configurations, develop automation code, and simulate failure scenarios.
-
-Vagrant topologies are described in a Vagrantfile, which is a Ruby program that
-tells Vagrant which devices to create and how to configure their networks.
-`vagrant up` will execute the Vagrantfile and create the reference topology
-using Virtualbox. It will also use Ansible to configure the out-of-band
-management network.
