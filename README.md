@@ -22,6 +22,8 @@ Quickstart: Single-Attach Demo
     ssh server01
     ping 172.16.1.104
 
+[Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
+
 ![Topology](evpn.png)
 
 Quickstart: Dual-Attach (MLAG) Demo
@@ -35,6 +37,9 @@ Quickstart: Dual-Attach (MLAG) Demo
     sudo su - cumulus
     ssh server01
     ping 172.16.1.103
+
+[Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
+
 
 ![Topology](mlag.png)
 
@@ -51,6 +56,8 @@ NOTE: Due to the size the DCI demo is only supported on KVM
     sudo su - cumulus
     ssh server01
     ping 172.16.1.105
+
+[Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
 
 ![Topology](dci.png)
 
