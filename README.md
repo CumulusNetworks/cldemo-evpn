@@ -7,7 +7,7 @@ The flatfiles in this repository will set up a BGP unnumbered routing fabric bet
 
 
 
-Quickstart: Run the single-attach demo
+Quickstart: Run the Single-Attach Demo
 ------------------------
     git clone https://github.com/cumulusnetworks/cldemo-evpn
     cd cldemo-evpn
@@ -20,7 +20,7 @@ Quickstart: Run the single-attach demo
 
 ![Topology](evpn.png)
 
-Quickstart: Run the dual-attach (MLAG) demo
+Quickstart: Run the Dual-Attach (MLAG) Demo
 ------------------------
     git clone https://github.com/cumulusnetworks/cldemo-evpn
     cd cldemo-evpn
@@ -34,7 +34,7 @@ Quickstart: Run the dual-attach (MLAG) demo
 
 ![Topology](mlag.png)
 
-Quickstart: Run the DCI (Datacenter Interconnect) demo
+Quickstart: Run the DCI (Datacenter Interconnect) iBGP Demo
 ------------------------
 NOTE: Due to the size the DCI demo is only supported on KVM
 
@@ -50,10 +50,23 @@ NOTE: Due to the size the DCI demo is only supported on KVM
 
 ![Topology](dci.png)
 
+DCI iBGP Demo Notes:
+
+* There are two sites, site01 and site02
+* For the iBGP Demo site01 and site02 shared an ASN (12345)
+* Config Notes:
+  * for the DCI connection the BGP keyword alowas-in is used so we can accept routes from other sites that share the same ASN
+  * for the connection to the Provider Edge (in this case the "internet" device) the exit leafs set their BGP weight to always prefer this route
+  * There are 3 peer-groups from the exit leaf perspective
+    * EDGE, the connection to the "internet" device to route out of the data center
+    * FABRIC, the connection internally to the spine switches
+    * DCI, the connection across the internet to site02.  This comes up after reachability to site02 comes up.
+
+
 
 Requirements
 ----------------------
-[Vagrant](https://www.vagrantup.com/) (recommended 1.8.7)
+[Vagrant](https://www.vagrantup.com/) (recommended 1.8.6 or 1.8.7)
 
 and
 
@@ -80,6 +93,12 @@ Detailed Instructions and Documentation
 ---------------------------------------
 [EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
 The EVPN Documentation was built around this demo and makes walking through this demo a breeze.  Please report problems with this demo using the "issues" tab above.
+
+![Rocket Turtle](rocketturtle.png)
+
+### Cumulus Community
+
+Need help?  Post on the [Community](https://getsatisfaction.cumulusnetworks.com/cumulus) or join [Cumulus Slack](https://slack.cumulusnetworks.com/)
 
 ![Cumulus icon](cumulus-logo.png)
 
