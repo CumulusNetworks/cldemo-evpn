@@ -26,7 +26,7 @@ Quickstart: Run the dual-attach (MLAG) demo
     cd cldemo-evpn
     git checkout mlag
     vagrant up oob-mgmt-server oob-mgmt-switch
-    vagrant up leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server03
+    vagrant up leaf01 leaf02 leaf03 leaf04 spine01 spine02 server01 server02 server03 server04
     vagrant ssh oob-mgmt-server
     sudo su - cumulus
     ssh server01
@@ -34,9 +34,26 @@ Quickstart: Run the dual-attach (MLAG) demo
 
 ![Topology](mlag.png)
 
+Quickstart: Run the DCI (Datacenter Interconnect) demo
+------------------------
+NOTE: Due to the size the DCI demo is only supported on KVM
+
+    git clone https://github.com/cumulusnetworks/cldemo-evpn
+    cd cldemo-evpn
+    git checkout dci
+    vagrant up oob-mgmt-server oob-mgmt-switch
+    vagrant up
+    vagrant ssh oob-mgmt-server
+    sudo su - cumulus
+    ssh server01
+    ping 172.16.1.105
+
+![Topology](dci.png)
+
+
 Requirements
 ----------------------
-[Vagrant](https://www.vagrantup.com/)
+[Vagrant](https://www.vagrantup.com/) (recommended 1.8.7)
 
 and
 
