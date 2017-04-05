@@ -73,6 +73,37 @@ DCI iBGP Demo Notes:
     * FABRIC, the connection internally to the spine switches
     * DCI, the connection across the internet to site02.  This comes up after reachability to site02 comes up.
 
+Quickstart: DCI (Datacenter Interconnect) iBGP Demo
+------------------------
+NOTE: Due to the size the DCI demo is only supported on KVM
+
+    git clone https://github.com/cumulusnetworks/cldemo-evpn
+    cd cldemo-evpn
+    git checkout dci
+    vagrant up oob-mgmt-server oob-mgmt-switch
+    vagrant up
+    vagrant ssh oob-mgmt-server
+    sudo su - cumulus
+    ssh server01
+    ping 172.16.1.105
+
+[Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
+
+![Topology](ebgp-dci.png)
+
+DCI eBGP Demo Notes:
+
+* There are two sites, site01 and site02
+* For the eBGP Demo site01 is ASN100 and site02 is using ASN 200
+* There is an eBGP connection (the DCI) between exit01/exit02 and the site02 Cumulus VX instance
+* Config Notes:
+  * for the connection to the Provider Edge (in this case the "internet" device) the exit leafs set their BGP weight to always prefer this route
+  * the BGP capability eBGP multi-hop `neighbor DCI ebgp-multihop` is used to allow an eBGP connection between loopbacks across the internet
+  * There are 3 peer-groups from the exit leaf perspective
+    * EDGE, the connection to the "internet" device to route out of the data center
+    * FABRIC, the connection internally to the spine switches
+    * DCI, the connection across the internet to site02.  This comes up after reachability to site02 comes up.
+
 ### Detailed Instructions and Documentation
 ---------------------------------------
 [EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
