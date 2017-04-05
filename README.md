@@ -66,13 +66,23 @@ DCI iBGP Demo Notes:
     * FABRIC, the connection internally to the spine switches
     * DCI, the connection across the internet to site02.  This comes up after reachability to site02 comes up.
 
-Detailed Instructions and Documentation
+### Detailed Instructions and Documentation
 ---------------------------------------
 [EVPN Documentation](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN)
 The EVPN Documentation was built around this demo and makes walking through this demo a breeze.  Please report problems with this demo using the "issues" tab above.
 
+## Troubleshooting Commands
 
-Requirements
+ * `bridge fdb show` shows the mac-address table for local and remote VTEPs
+ * `show ip bgp summary` shows BGP IPv4 neighbor adjacencies
+ * `show bgp evpn summary` shows BGP EVPN neighbor adjacencies
+ * `show bgp evpn vni` shows VNIs that this device is participating in (only works on a VTEP)
+ * `show evpn vni` shows remote VTEPs that share VNIs that this switch is participating in (only works on a VTEP)
+ * `show evpn mac vni all` show MAC address information learned per VNI
+ * `show bgp evpn route` show all EVPN routes
+
+
+### Requirements
 ----------------------
 [Vagrant](https://www.vagrantup.com/) (recommended 1.8.6 or 1.8.7)
 
