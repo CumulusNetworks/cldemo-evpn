@@ -1,4 +1,4 @@
-![Cumulus icon](cumulus-logo.png)
+![Cumulus icon](cumulus-logo.png) 
 Cumulus Networks EVPN Demos for [Cumulus VX](https://cumulusnetworks.com/products/cumulus-vx/)
 
 Need help?  Post on the [Community](https://getsatisfaction.cumulusnetworks.com/cumulus) or join [Cumulus Slack](https://slack.cumulusnetworks.com/)
