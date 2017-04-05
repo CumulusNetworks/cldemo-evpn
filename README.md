@@ -73,13 +73,13 @@ DCI iBGP Demo Notes:
     * FABRIC, the connection internally to the spine switches
     * DCI, the connection across the internet to site02.  This comes up after reachability to site02 comes up.
 
-Quickstart: DCI (Datacenter Interconnect) iBGP Demo
+Quickstart: DCI (Datacenter Interconnect) eBGP Demo
 ------------------------
 NOTE: Due to the size the DCI demo is only supported on KVM
 
     git clone https://github.com/cumulusnetworks/cldemo-evpn
     cd cldemo-evpn
-    git checkout dci
+    git checkout ebgp-dci
     vagrant up oob-mgmt-server oob-mgmt-switch
     vagrant up
     vagrant ssh oob-mgmt-server
