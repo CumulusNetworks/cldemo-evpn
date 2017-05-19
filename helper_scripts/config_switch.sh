@@ -44,14 +44,14 @@ echo "  copying bgp"
 sed -i 's/bgpd=no/bgpd=yes/g' /etc/quagga/daemons
 
 #Upgrading Quagga for EVPN
-echo "  adding EA packages"
-sed -i 's/#deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
-sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
-apt-get update
-echo "  installing Quagga"
-apt-get install cumulus-evpn
-echo " use apt-get upgrade to load quagga package"
-sudo apt-get upgrade -y --force-yes
+#echo "  adding EA packages"
+#sed -i 's/#deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb     http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
+#sed -i 's/#deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/deb-src http:\/\/repo3.cumulusnetworks.com\/repo CumulusLinux-3-early-access cumulus/' /etc/apt/sources.list
+#apt-get update
+#echo "  installing Quagga"
+#apt-get install cumulus-evpn
+#echo " use apt-get upgrade to load quagga package"
+#sudo apt-get upgrade -y --force-yes
 
 echo "  copying interfaces"
 cp /home/vagrant/interfaces /etc/network/interfaces

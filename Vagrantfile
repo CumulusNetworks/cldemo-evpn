@@ -164,7 +164,7 @@ end
   config.vm.define "oob-mgmt-switch" do |device|
     device.vm.hostname = "oob-mgmt-switch"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -436,7 +436,7 @@ end
   config.vm.define "exit02" do |device|
     device.vm.hostname = "exit02"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -628,7 +628,7 @@ end
   config.vm.define "exit01" do |device|
     device.vm.hostname = "exit01"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -820,7 +820,7 @@ end
   config.vm.define "isp" do |device|
     device.vm.hostname = "isp"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -914,7 +914,7 @@ end
   config.vm.define "spine02" do |device|
     device.vm.hostname = "spine02"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1092,7 +1092,7 @@ end
   config.vm.define "spine01" do |device|
     device.vm.hostname = "spine01"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1270,7 +1270,7 @@ end
   config.vm.define "leaf04" do |device|
     device.vm.hostname = "leaf04"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1462,7 +1462,7 @@ end
   config.vm.define "leaf02" do |device|
     device.vm.hostname = "leaf02"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1654,7 +1654,7 @@ end
   config.vm.define "leaf03" do |device|
     device.vm.hostname = "leaf03"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1846,7 +1846,7 @@ end
   config.vm.define "leaf01" do |device|
     device.vm.hostname = "leaf01"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -2038,7 +2038,7 @@ end
   config.vm.define "site02" do |device|
     device.vm.hostname = "site02"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -2394,7 +2394,7 @@ end
   config.vm.define "internet" do |device|
     device.vm.hostname = "internet"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.1"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
