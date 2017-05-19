@@ -24,7 +24,7 @@ Quickstart: Single-Attach Demo
 
 [Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
 
-![Topology](evpn.png)
+![Topology](images/evpn.png)
 
 Quickstart: Dual-Attach (MLAG) Demo
 ------------------------
@@ -41,7 +41,7 @@ Quickstart: Dual-Attach (MLAG) Demo
 [Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
 
 
-![Topology](mlag.png)
+![Topology](images/mlag.png)
 
 Quickstart: DCI (Datacenter Interconnect) iBGP Demo
 ------------------------
@@ -59,7 +59,7 @@ NOTE: Due to the size the DCI demo is only supported on KVM
 
 [Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
 
-![Topology](dci.png)
+![Topology](images/ibgp-dci.png)
 
 DCI iBGP Demo Notes:
 
@@ -89,7 +89,7 @@ NOTE: Due to the size the DCI demo is only supported on KVM
 
 [Troubleshooting Commands](https://docs.cumulusnetworks.com/display/DOCS/Ethernet+Virtual+Private+Network+-+EVPN#EthernetVirtualPrivateNetwork-EVPN-CumulusLinuxOutputCommands)    
 
-![Topology](ebgp-dci.png)
+![Topology](images/ebgp-dci.png)
 
 DCI eBGP Demo Notes:
 
