@@ -167,10 +167,10 @@ end
   config.vm.define "oob-mgmt-switch" do |device|
     device.vm.hostname = "oob-mgmt-switch"
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 256
+      v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
@@ -438,7 +438,7 @@ end
   ##### DEFINE VM for exit02 #####
   config.vm.define "exit02" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -639,7 +639,7 @@ end
   ##### DEFINE VM for exit01 #####
   config.vm.define "exit01" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -840,7 +840,7 @@ end
   ##### DEFINE VM for spine02 #####
   config.vm.define "spine02" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1017,7 +1017,7 @@ end
   ##### DEFINE VM for spine01 #####
   config.vm.define "spine01" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1194,7 +1194,7 @@ end
   ##### DEFINE VM for leaf04 #####
   config.vm.define "leaf04" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1399,7 +1399,7 @@ end
   ##### DEFINE VM for leaf02 #####
   config.vm.define "leaf02" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1604,7 +1604,7 @@ end
   ##### DEFINE VM for leaf03 #####
   config.vm.define "leaf03" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -1809,7 +1809,7 @@ end
   ##### DEFINE VM for leaf01 #####
   config.vm.define "leaf01" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
       v.memory = 512
@@ -2477,10 +2477,10 @@ end
   ##### DEFINE VM for internet #####
   config.vm.define "internet" do |device|
     device.vm.box = "CumulusCommunity/cumulus-vx"
-    device.vm.box_version = "3.2.0"
+    device.vm.box_version = "3.3.0"
 
     device.vm.provider :libvirt do |v|
-      v.memory = 256
+      v.memory = 512
     end
     #   see note here: https://github.com/pradels/vagrant-libvirt#synced-folders
     device.vm.synced_folder ".", "/vagrant", disabled: true
