@@ -732,7 +732,6 @@ end
       vbox.customize ['modifyvm', :id, '--nicpromisc10', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc11', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc12', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc13', 'allow-all']
 
 end
 
