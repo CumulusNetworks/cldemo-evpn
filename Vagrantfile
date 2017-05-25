@@ -467,20 +467,20 @@ end
 
 
       # NETWORK INTERFACES
-      # link for eth0 --> oob-mgmt-switch:swp11
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net39", auto_config: false , nic_type: '82540EM', :mac => "a00000000022"
+      # link for xe-0/0/0 --> oob-mgmt-switch:swp11
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net39", auto_config: false , nic_type: '82540EM'
 
-      # link for swp1 --> leaf01:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net18", auto_config: false , nic_type: '82540EM', :mac => "443839000021"
+      # link for xe-0/0/1 --> leaf01:swp52
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net18", auto_config: false , nic_type: '82540EM'
 
-      # link for swp2 --> leaf02:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , nic_type: '82540EM', :mac => "443839000043"
+      # link for xe-0/0/2 --> leaf02:swp52
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , nic_type: '82540EM'
 
-      # link for swp3 --> leaf03:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net14", auto_config: false , nic_type: '82540EM', :mac => "443839000019"
+      # link for xe-0/0/3 --> leaf03:swp52
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net14", auto_config: false , nic_type: '82540EM'
 
-      # link for swp4 --> leaf04:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false ,nic_type: '82540EM',  :mac => "443839000037"
+      # link for xe-0/0/4 --> leaf04:swp52
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false ,nic_type: '82540EM'
 
 
     device.vm.provider "virtualbox" do |vbox|
