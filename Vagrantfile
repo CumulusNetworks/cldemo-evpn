@@ -613,7 +613,7 @@ end
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net27", auto_config: false , :mac => "443839000030"
 
       # link for swp52 --> spine02:swp4
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false , :mac => "443839000036"
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false , nic_type: '82540EM', :mac => "443839000036"
 
 
     device.vm.provider "virtualbox" do |vbox|
