@@ -451,6 +451,10 @@ end
       end
       vqfxpfe.vm.synced_folder '.', '/vagrant', disabled: true
       vqfxpfe.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_vqfx_internal"
+      
+    device.vm.provider "virtualbox" do |vbox|
+      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
+            
   end
 
   ##### DEFINE VM for spine02 #####
@@ -727,6 +731,7 @@ end
       vbox.customize ['modifyvm', :id, '--nicpromisc10', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc11', 'allow-all']
       vbox.customize ['modifyvm', :id, '--nicpromisc12', 'allow-all']
+      vbox.customize ['modifyvm', :id, '--nicpromisc13', 'allow-all']
 
 end
 
