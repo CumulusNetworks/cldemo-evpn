@@ -459,7 +459,7 @@ end
     device.vm.box = "juniper/vqfx10k-re"
     device.ssh.insert_key = false
     device.vm.provider "virtualbox" do |v|
-      v.memory = 1024
+      v.memory = 2048
     end
     device.vm.synced_folder ".", "/vagrant", disabled: true
 
@@ -469,19 +469,19 @@ end
 
       # NETWORK INTERFACES
       # link for xe-0/0/0 --> oob-mgmt-switch:swp11
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net39", auto_config: false , nic_type: '82540EM'
+      device.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_net39"
 
       # link for xe-0/0/1 --> leaf01:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net18", auto_config: false , nic_type: '82540EM'
+      device.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_net18" 
 
       # link for xe-0/0/2 --> leaf02:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , nic_type: '82540EM'
+      device.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_net38"
 
       # link for xe-0/0/3 --> leaf03:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net14", auto_config: false , nic_type: '82540EM'
+      device.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_net14"
 
       # link for xe-0/0/4 --> leaf04:swp52
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false ,nic_type: '82540EM'
+      device.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_net31"
 
 
     # device.vm.provider "virtualbox" do |vbox|
@@ -713,7 +713,7 @@ end
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net19", auto_config: false , :mac => "443839000022"
 
       # link for swp52 --> spine02:swp2
-      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , nic_type: '82540EM', :mac => "443839000042"
+      device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net38", auto_config: false , :mac => "443839000042"
 
 
     device.vm.provider "virtualbox" do |vbox|
