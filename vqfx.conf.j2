@@ -1,0 +1,173 @@
+system {
+    host-name spine02;
+    root-authentication {
+        encrypted-password "$1$fv3Ke4LT$10nlsy3SEJy5ainm.kPTd."; ## SECRET-DATA
+        ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key"; ## SECRET-DATA
+    }
+    login {
+        user vagrant {
+            uid 2000;
+            class super-user;
+            authentication {
+                ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key"; ## SECRET-DATA
+            }
+        }
+    }
+    services {
+        ssh {
+            root-login allow;
+        }
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    extensions {
+        providers {
+            juniper {
+                license-type juniper deployment-scope commercial;
+            }
+            chef {
+                license-type juniper deployment-scope commercial;
+            }
+        }
+    }
+}
+interfaces {
+    xe-0/0/0 {
+        unit 0 {
+            family inet {
+                address 192.168.200.22/24;
+            }
+        }
+    }
+    xe-0/0/1 {
+        unit 0 {
+            family inet {
+                address 10.10.1.1/24;
+            }
+        }
+    }
+    xe-0/0/2 {
+        unit 0 {
+            family inet {
+                address 10.10.2.1/24;
+            }
+        }
+    }
+    xe-0/0/3 {
+        unit 0 {
+            family inet {
+                address 10.10.3.1/24;
+            }
+        }
+    }
+    xe-0/0/3 {
+        unit 0 {
+            family inet {
+                address 10.10.4.1/24;
+            }
+        }
+    }    
+    em0 {
+        unit 0 {
+            family inet {
+                dhcp;
+            }
+        }
+    }
+    em1 {
+        unit 0 {
+            family inet {
+                address 169.254.0.2/24;
+            }
+        }
+    }
+    em5 {
+        unit 0 {
+            family inet {
+                address 10.10.5.1/24;
+            }
+        }
+    }
+    lo0 {
+        unit 0 {
+            family inet {
+                address 10.0.0.22/32;
+            }
+        }
+    }
+}
+routing-options {
+    autonomous-system 64700;
+}
+protocols {
+    bgp {
+        traceoptions {
+            file bgp.debug world-readable;
+            flag update detail;
+            flag general;
+        }
+        group FABRIC {
+            type external;
+            multihop {
+                no-nexthop-change;
+            }
+            family inet {
+                unicast;
+            }
+            family evpn {
+                signaling {
+                    no-install;
+                }
+            }
+            export CUMULUS_RULES;
+            local-as 64700;
+            multipath multiple-as;
+            neighbor 10.10.1.2 {
+                description leaf01;
+                peer-as 65011;
+            }
+            neighbor 10.10.2.2 {
+                description leaf02;
+                peer-as 65012;
+            }            
+            neighbor 10.10.3.2 {
+                description leaf03;
+                peer-as 65013;
+            }
+            neighbor 10.10.4.2 {
+                description leaf04;
+                peer-as 65014;
+            }            
+        }
+    }
+    lldp {
+        interface all;
+    }
+}
+policy-options {
+    policy-statement CUMULUS_RULES {
+        term TERM1 {
+            from protocol direct;
+            then accept;
+        }
+        term TERM2 {
+            from family inet;
+            then {
+                next-hop self;
+            }
+        }
+    }
+}
