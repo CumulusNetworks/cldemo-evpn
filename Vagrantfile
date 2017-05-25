@@ -454,6 +454,7 @@ end
       
     device.vm.provider "virtualbox" do |vbox|
       vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
+end
             
   end
 
