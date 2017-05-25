@@ -451,10 +451,6 @@ end
       end
       vqfxpfe.vm.synced_folder '.', '/vagrant', disabled: true
       vqfxpfe.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{wbid}_vqfx_internal"
-      
-    device.vm.provider "virtualbox" do |vbox|
-      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
-end
             
   end
 
@@ -488,16 +484,16 @@ end
       device.vm.network "private_network", virtualbox__intnet: "#{wbid}_net31", auto_config: false ,nic_type: '82540EM'
 
 
-    device.vm.provider "virtualbox" do |vbox|
-      vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc5', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc6', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc7', 'allow-all']
-      vbox.customize ['modifyvm', :id, '--nicpromisc8', 'allow-all']
+    # device.vm.provider "virtualbox" do |vbox|
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc3', 'allow-all']
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc4', 'allow-all']
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc5', 'allow-all']
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc6', 'allow-all']
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc7', 'allow-all']
+    #   vbox.customize ['modifyvm', :id, '--nicpromisc8', 'allow-all']
 
-end
+# end
 
   end
 
