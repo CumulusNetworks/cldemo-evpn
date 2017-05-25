@@ -11,7 +11,7 @@ iface swp51
 
 auto swp52
 iface swp52
-  10.10.1.2/24
+  address 10.10.1.2/24
   
 # bridge to hosts
 auto swp1
