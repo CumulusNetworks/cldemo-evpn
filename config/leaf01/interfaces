@@ -7,6 +7,15 @@ iface lo inet loopback
 auto eth0
 iface eth0 inet dhcp
 
+#peerlink
+auto swp49
+iface swp49
+  post-up ip link set $IFACE promisc on
+  
+auto swp50
+iface swp50
+  post-up ip link set $IFACE promisc on
+  
 # uplinks
 auto swp51
 iface swp51
@@ -17,7 +26,8 @@ iface swp52
 #host connections
 auto swp1
 iface swp1
-
+  post-up ip link set $IFACE promisc on
+  
 auto server01
 iface server01
   alias server01 MLAG bond
