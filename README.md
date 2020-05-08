@@ -1,6 +1,5 @@
 # DEPRECATED
 ## This repo is no longer maintained.<br>For a list of current demos, please visit:<br>https://gitlab.com/cumulus-consulting/goldenturtle/<br><br><br>
-------------------------
 
 ## Cumulus Networks EVPN Demos for [Cumulus VX](https://cumulusnetworks.com/products/cumulus-vx/)
 
